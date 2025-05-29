@@ -10,4 +10,4 @@ A Rust-based password cracker for educational purposes. Attempts to crack MD5 or
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/RustPassCracker.git
+   git clone https://github.com/murugiclin/RustPassCracker.git

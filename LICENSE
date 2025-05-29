@@ -1,21 +1,22 @@
-MIT License
 
-Copyright (c) 2025 CLIN
+### How to Use
+1. **Setup**:
+   - Create a new Rust project: `cargo new RustPassCracker`.
+   - Set up the directory structure as shown.
+   - Copy the provided code into the respective files.
+   - Create a `wordlist.txt` with sample passwords.
+   - Install Rust if not already installed: `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+2. **Build and Run**:
+   - Build: `cargo build --release`.
+   - Run: `cargo run --release -- <hash> wordlist.txt <algo> --output report.json`.
+   - Example (MD5 hash of "password"): `cargo run --release -- 5f4dcc3b5aa765d61d8327deb882cf99 wordlist.txt md5`.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+3. **Sample Output (`report.json`)**:
+```json
+{
+  "target_hash": "5f4dcc3b5aa765d61d8327deb882cf99",
+  "algorithm": "md5",
+  "password_found": "password",
+  "status": "Success"
+}
